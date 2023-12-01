@@ -51,7 +51,7 @@ namespace Play.Catalog.Service.Controllers
             return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item);
         }
 
-        [HttpPut("id")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> PutAsync(Guid id, UpdatedItemDto updatedItemDto)
         {
             var existingItem = await itemsRepository.GetAsync(id);
@@ -70,7 +70,7 @@ namespace Play.Catalog.Service.Controllers
             return NoContent();
         }
 
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(Guid id)
         {
             var item = await itemsRepository.GetAsync(id);
