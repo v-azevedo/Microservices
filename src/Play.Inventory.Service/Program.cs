@@ -42,7 +42,7 @@ app.Run();
 
 static void AddCatalogClient(WebApplicationBuilder builder)
 {
-    Random jitterer = new Random();
+    Random jitterer = new();
 
     builder.Services.AddHttpClient<CatalogClient>(client =>
     {
